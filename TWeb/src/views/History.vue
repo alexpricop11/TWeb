@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="history-content">
     <BackButton/>
     <h1>Istoria Real Madrid</h1>
     <section>
@@ -43,8 +43,53 @@
   </div>
 </template>
 <style scoped>
+.history-content {
+  font-family: 'Poppins', sans-serif;
+  color: #333;
+  background-color: #f0f0f5;
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 900px;
+  margin: 40px auto;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
 
+h1 {
+  text-align: center;
+  font-size: 32px;
+  margin-bottom: 30px;
+  color: #2c3e50;
+  letter-spacing: 1px;
+  font-weight: bold;
+}
+
+.section img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 15px auto;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.section h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+  color: #34495e;
+  border-left: 4px solid #3498db;
+  padding-left: 10px;
+  font-weight: bold;
+}
+
+.section p {
+  font-size: 16px;
+  margin: 10px 0;
+  line-height: 1.8;
+  color: #555;
+}
 </style>
+
+
 <script>
 
 import {defineComponent} from "vue";

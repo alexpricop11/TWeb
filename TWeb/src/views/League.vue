@@ -203,69 +203,9 @@ import BackButton from "@/components/BackButton.vue";
         <td>5</td>
         <td>11</td>
         <td>27</td>
-        <td>36</td>
-        <td>-9</td>
-        <td>23</td>
-      </tr>
-      <tr>
-        <td>16</td>
-        <td>Leganés</td>
-        <td>22</td>
-        <td>5</td>
-        <td>8</td>
-        <td>9</td>
-        <td>19</td>
         <td>30</td>
-        <td>-11</td>
+        <td>-3</td>
         <td>23</td>
-      </tr>
-      <tr>
-        <td>17</td>
-        <td>Deportivo Alavés</td>
-        <td>22</td>
-        <td>5</td>
-        <td>6</td>
-        <td>11</td>
-        <td>25</td>
-        <td>34</td>
-        <td>-9</td>
-        <td>21</td>
-      </tr>
-      <tr>
-        <td>18</td>
-        <td>Espanyol</td>
-        <td>22</td>
-        <td>6</td>
-        <td>5</td>
-        <td>11</td>
-        <td>21</td>
-        <td>33</td>
-        <td>-12</td>
-        <td>23</td>
-      </tr>
-      <tr>
-        <td>19</td>
-        <td>Valencia</td>
-        <td>22</td>
-        <td>4</td>
-        <td>7</td>
-        <td>11</td>
-        <td>22</td>
-        <td>37</td>
-        <td>-15</td>
-        <td>19</td>
-      </tr>
-      <tr>
-        <td>20</td>
-        <td>Real Valladolid</td>
-        <td>22</td>
-        <td>4</td>
-        <td>3</td>
-        <td>15</td>
-        <td>15</td>
-        <td>47</td>
-        <td>-32</td>
-        <td>15</td>
       </tr>
       </tbody>
     </table>
@@ -273,4 +213,47 @@ import BackButton from "@/components/BackButton.vue";
 </template>
 
 <style scoped>
+.liga-logo {
+  display: block;
+  margin: 20px auto;
+  max-width: 150px;
+}
+
+h1 {
+  text-align: center;
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+}
+
+thead {
+  background-color: #008CBA;
+  color: #fff;
+}
+
+th, td {
+  border: 1px solid #ddd;
+  text-align: center;
+  padding: 10px;
+}
+
+tr {
+  background-color: #BCE9FB;
+}
+
+tbody td {
+  color: #333;
+}
+
+th {
+  font-weight: bold;
+  color: black;
+  text-transform: uppercase;
+}
 </style>

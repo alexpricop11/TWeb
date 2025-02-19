@@ -1,7 +1,6 @@
 <template>
   <div>
     <BackButton/>
-    <h1>Teams</h1>
     <div class="list-teams">
       <table>
         <thead>
@@ -300,5 +299,38 @@ import BackButton from "@/components/BackButton.vue";
 </script>
 
 <style scoped>
+div {
+  margin: 20px;
+}
+
+.list-teams table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.list-teams th,
+.list-teams td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: left;
+}
+
+.list-teams th {
+  background-color: #f4f4f4;
+  font-weight: bold;
+}
+
+.list-teams tr {
+  background-color: #f9f9f9;
+}
+
+.list-teams tr:hover {
+  background-color: #f1f1f1;
+}
+
+.list-teams img {
+  border-radius: 50%;
+  border: 2px solid #ddd;
+}
 
 </style>
