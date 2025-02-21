@@ -5,7 +5,6 @@ import BackButton from "@/components/BackButton.vue";
 <template>
   <div>
     <BackButton/>
-    <h1>La Liga</h1>
     <img
         src="https://tmssl.akamaized.net//images/logo/header/es1.png?lm=1725974302"
         alt="Logo La Liga"
@@ -219,12 +218,6 @@ import BackButton from "@/components/BackButton.vue";
   max-width: 150px;
 }
 
-h1 {
-  text-align: center;
-  font-size: 2rem;
-  color: #333;
-  margin-bottom: 20px;
-}
 
 table {
   width: 100%;
