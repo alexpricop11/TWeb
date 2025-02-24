@@ -1,6 +1,5 @@
 <template>
   <div class="history-content">
-    <BackButton/>
     <h1>Istoria Real Madrid</h1>
     <section>
       <h2>Începuturile Clubului</h2>
@@ -93,9 +92,8 @@ h1 {
 <script>
 
 import {defineComponent} from "vue";
-import BackButton from "@/components/BackButton.vue";
 
 export default defineComponent({
-  components: {BackButton}
+  components: {}
 })
 </script>

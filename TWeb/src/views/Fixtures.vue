@@ -1,11 +1,9 @@
 <script setup>
 
-import BackButton from "@/components/BackButton.vue";
 </script>
 
 <template>
   <div class="fixtures-container">
-    <BackButton/>
     <h1>Program Meciuri</h1>
     <ul>
       <li><strong>15 februarie 2025</strong> - <em>CA Osasuna</em> - <span>Ora: 17:15</span></li>

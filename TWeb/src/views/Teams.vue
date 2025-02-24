@@ -1,6 +1,5 @@
 <template>
   <div>
-    <BackButton/>
     <div class="list-teams">
       <table>
         <thead>
@@ -295,7 +294,6 @@
 </template>
 
 <script setup>
-import BackButton from "@/components/BackButton.vue";
 </script>
 
 <style scoped>

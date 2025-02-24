@@ -1,15 +1,13 @@
 <script setup>
-import BackButton from "@/components/BackButton.vue";
 </script>
 
 <template>
   <div>
-    <BackButton/>
     <img
         src="https://tmssl.akamaized.net//images/logo/header/es1.png?lm=1725974302"
         alt="Logo La Liga"
         class="liga-logo"
-    />
+    />9+
     <table>
       <thead>
       <tr>
@@ -214,19 +212,19 @@ import BackButton from "@/components/BackButton.vue";
 <style scoped>
 .liga-logo {
   display: block;
-  margin: 20px auto;
+  margin: 0 auto;
   max-width: 150px;
 }
-
 
 table {
   width: 100%;
   border-collapse: collapse;
-  margin: 20px 0;
+  margin: 20px auto;
+  text-align: center;
 }
 
 thead {
-  background-color: #008CBA;
+  background-color: rgba(0, 140, 186, 0);
   color: #fff;
 }
 
@@ -237,16 +235,16 @@ th, td {
 }
 
 tr {
-  background-color: #BCE9FB;
+  background-color: rgb(255, 255, 255);
 }
 
 tbody td {
-  color: #333;
+  color: #000000;
 }
 
 th {
   font-weight: bold;
-  color: black;
+  color: #000000;
   text-transform: uppercase;
 }
 </style>
