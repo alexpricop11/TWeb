@@ -204,6 +204,66 @@
         <td>-3</td>
         <td>23</td>
       </tr>
+      <tr>
+        <td>16</td>
+        <td>Leganés</td>
+        <td>22</td>
+        <td>5</td>
+        <td>8</td>
+        <td>9</td>
+        <td>19</td>
+        <td>30</td>
+        <td>-11</td>
+        <td>23</td>
+      </tr>
+      <tr>
+        <td>17</td>
+        <td>Deportivo Alavés</td>
+        <td>22</td>
+        <td>5</td>
+        <td>6</td>
+        <td>11</td>
+        <td>25</td>
+        <td>34</td>
+        <td>-9</td>
+        <td>21</td>
+      </tr>
+      <tr>
+        <td>18</td>
+        <td>Espanyol</td>
+        <td>22</td>
+        <td>6</td>
+        <td>5</td>
+        <td>11</td>
+        <td>21</td>
+        <td>33</td>
+        <td>-12</td>
+        <td>-3</td>
+      </tr>
+      <tr>
+        <td>19</td>
+        <td>Valencia</td>
+        <td>22</td>
+        <td>4</td>
+        <td>7</td>
+        <td>11</td>
+        <td>22</td>
+        <td>37</td>
+        <td>-15</td>
+        <td>19</td>
+      </tr>
+      <tr>
+        <td>20</td>
+        <td>Real Valladolid</td>
+        <td>22</td>
+        <td>4</td>
+        <td>3</td>
+        <td>15</td>
+        <td>15</td>
+        <td>47</td>
+        <td>-32</td>
+        <td>15</td>
+      </tr>
       </tbody>
     </table>
   </div>

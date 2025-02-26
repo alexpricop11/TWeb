@@ -25,8 +25,6 @@ export default {
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  position: relative;
-  overflow: hidden;
 }
 
 body::before {
@@ -40,8 +38,8 @@ body::before {
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
-  filter: blur(3px); /* Ajustează valoarea blur-ului după preferință */
-  z-index: -1; /* Asigură-te că pseudo-elementul este în spatele conținutului */
+  filter: blur(3px);
+  z-index: -1;
 }
 
 #app {
@@ -49,6 +47,6 @@ body::before {
   flex-direction: column;
   height: 100vh;
   position: relative;
-  z-index: 1; /* Asigură-te că conținutul este deasupra imaginii blurate */
+  z-index: 1;
 }
 </style>
