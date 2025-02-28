@@ -25,11 +25,12 @@ export default {
 body {
   margin: 0;
   font-family: Arial, sans-serif;
+  overflow: auto;
 }
 
 body::before {
   content: '';
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;

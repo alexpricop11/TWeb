@@ -1,4 +1,284 @@
 <script setup>
+import {ref} from 'vue'
+
+const teams = ref([
+  {
+    position: 1,
+    name: 'Real Madrid',
+    matches: 22,
+    wins: 15,
+    draws: 4,
+    losses: 3,
+    goalsScored: 50,
+    goalsConceded: 21,
+    goalDifference: '+29',
+    points: 49
+  },
+  {
+    position: 2,
+    name: 'Atlético Madrid',
+    matches: 22,
+    wins: 14,
+    draws: 6,
+    losses: 2,
+    goalsScored: 37,
+    goalsConceded: 14,
+    goalDifference: '+23',
+    points: 48
+  },
+  {
+    position: 3,
+    name: 'FC Barcelona',
+    matches: 22,
+    wins: 14,
+    draws: 3,
+    losses: 5,
+    goalsScored: 60,
+    goalsConceded: 24,
+    goalDifference: '+36',
+    points: 45
+  },
+  {
+    position: 4,
+    name: 'Athletic Bilbao',
+    matches: 22,
+    wins: 11,
+    draws: 8,
+    losses: 3,
+    goalsScored: 33,
+    goalsConceded: 20,
+    goalDifference: '+13',
+    points: 41
+  },
+  {
+    position: 5,
+    name: 'Villarreal',
+    matches: 22,
+    wins: 10,
+    draws: 7,
+    losses: 5,
+    goalsScored: 44,
+    goalsConceded: 33,
+    goalDifference: '+11',
+    points: 37
+  },
+  {
+    position: 6,
+    name: 'Rayo Vallecano',
+    matches: 22,
+    wins: 8,
+    draws: 8,
+    losses: 6,
+    goalsScored: 26,
+    goalsConceded: 24,
+    goalDifference: '+2',
+    points: 32
+  },
+  {
+    position: 7,
+    name: 'Girona',
+    matches: 22,
+    wins: 9,
+    draws: 4,
+    losses: 9,
+    goalsScored: 31,
+    goalsConceded: 30,
+    goalDifference: '+1',
+    points: 31
+  },
+  {
+    position: 8,
+    name: 'Osasuna',
+    matches: 22,
+    wins: 7,
+    draws: 9,
+    losses: 6,
+    goalsScored: 27,
+    goalsConceded: 31,
+    goalDifference: '-4',
+    points: 30
+  },
+  {
+    position: 9,
+    name: 'Mallorca',
+    matches: 22,
+    wins: 9,
+    draws: 3,
+    losses: 10,
+    goalsScored: 19,
+    goalsConceded: 28,
+    goalDifference: '-9',
+    points: 30
+  },
+  {
+    position: 10,
+    name: 'Real Betis',
+    matches: 22,
+    wins: 7,
+    draws: 8,
+    losses: 7,
+    goalsScored: 25,
+    goalsConceded: 28,
+    goalDifference: '-3',
+    points: 29
+  },
+  {
+    position: 11,
+    name: 'Real Sociedad',
+    matches: 22,
+    wins: 8,
+    draws: 4,
+    losses: 10,
+    goalsScored: 18,
+    goalsConceded: 19,
+    goalDifference: '-1',
+    points: 28
+  },
+  {
+    position: 12,
+    name: 'Sevilla',
+    matches: 22,
+    wins: 7,
+    draws: 7,
+    losses: 8,
+    goalsScored: 24,
+    goalsConceded: 30,
+    goalDifference: '-6',
+    points: 28
+  },
+  {
+    position: 13,
+    name: 'Celta Vigo',
+    matches: 22,
+    wins: 7,
+    draws: 4,
+    losses: 11,
+    goalsScored: 31,
+    goalsConceded: 35,
+    goalDifference: '-4',
+    points: 25
+  },
+  {
+    position: 14,
+    name: 'Getafe',
+    matches: 22,
+    wins: 5,
+    draws: 9,
+    losses: 8,
+    goalsScored: 17,
+    goalsConceded: 17,
+    goalDifference: '0',
+    points: 24
+  },
+  {
+    position: 15,
+    name: 'Las Palmas',
+    matches: 22,
+    wins: 6,
+    draws: 5,
+    losses: 11,
+    goalsScored: 27,
+    goalsConceded: 30,
+    goalDifference: '-3',
+    points: 23
+  },
+  {
+    position: 16,
+    name: 'Leganés',
+    matches: 22,
+    wins: 5,
+    draws: 8,
+    losses: 9,
+    goalsScored: 19,
+    goalsConceded: 30,
+    goalDifference: '-11',
+    points: 23
+  },
+  {
+    position: 17,
+    name: 'Deportivo Alavés',
+    matches: 22,
+    wins: 5,
+    draws: 6,
+    losses: 11,
+    goalsScored: 25,
+    goalsConceded: 34,
+    goalDifference: '-9',
+    points: 21
+  },
+  {
+    position: 18,
+    name: 'Espanyol',
+    matches: 22,
+    wins: 6,
+    draws: 5,
+    losses: 11,
+    goalsScored: 21,
+    goalsConceded: 33,
+    goalDifference: '-12',
+    points: -3
+  },
+  {
+    position: 19,
+    name: 'Valencia',
+    matches: 22,
+    wins: 4,
+    draws: 7,
+    losses: 11,
+    goalsScored: 22,
+    goalsConceded: 37,
+    goalDifference: '-15',
+    points: 19
+  },
+  {
+    position: 20,
+    name: 'Real Valladolid',
+    matches: 22,
+    wins: 4,
+    draws: 3,
+    losses: 15,
+    goalsScored: 15,
+    goalsConceded: 47,
+    goalDifference: '-32',
+    points: 15
+  }
+])
+
+// Variabile reactive pentru sortare
+const sortKey = ref('') // Coloana după care se sortează
+const sortOrder = ref(1) // 1 pentru ascendent, -1 pentru descendent
+
+// Funcție de sortare
+const sortTable = (key) => {
+  if (sortKey.value === key) {
+    // Inversează ordinea dacă e aceeași coloană
+    sortOrder.value = -sortOrder.value
+  } else {
+    // Sortează după o nouă coloană, implicit ascendent
+    sortKey.value = key
+    sortOrder.value = 1
+  }
+
+  teams.value.sort((a, b) => {
+    let aValue = a[key]
+    let bValue = b[key]
+
+    // Tratează cazurile speciale (goalDifference)
+    if (key === 'goalDifference') {
+      aValue = parseInt(aValue) || 0 // Transformă în număr, 0 dacă e invalid
+      bValue = parseInt(bValue) || 0
+      return sortOrder.value * (aValue - bValue)
+    }
+
+    // Sortare pentru stringuri (ex. name)
+    if (typeof aValue === 'string') {
+      return sortOrder.value * aValue.localeCompare(bValue)
+    }
+
+    // Sortare pentru numere (ex. matches, wins, points)
+    return sortOrder.value * (aValue - bValue)
+  })
+}
 </script>
 
 <template>
@@ -7,262 +287,40 @@
         src="https://tmssl.akamaized.net//images/logo/header/es1.png?lm=1725974302"
         alt="Logo La Liga"
         class="liga-logo"
-    />9+
+    />
     <table>
       <thead>
       <tr>
-        <th>Loc</th>
-        <th>Echipa</th>
-        <th>Meciuri</th>
-        <th>Victorii</th>
-        <th>Egaluri</th>
-        <th>Înfrângeri</th>
-        <th>Goluri marcate</th>
-        <th>Goluri primite</th>
-        <th>Golaveraj</th>
-        <th>Puncte</th>
+        <th @click="sortTable('position')">Loc {{ sortKey === 'position' ? (sortOrder === 1 ? '↑' : '↓') : '' }}</th>
+        <th @click="sortTable('name')">Echipa {{ sortKey === 'name' ? (sortOrder === 1 ? '↑' : '↓') : '' }}</th>
+        <th @click="sortTable('matches')">Meciuri {{ sortKey === 'matches' ? (sortOrder === 1 ? '↑' : '↓') : '' }}</th>
+        <th @click="sortTable('wins')">Victorii {{ sortKey === 'wins' ? (sortOrder === 1 ? '↑' : '↓') : '' }}</th>
+        <th @click="sortTable('draws')">Egaluri {{ sortKey === 'draws' ? (sortOrder === 1 ? '↑' : '↓') : '' }}</th>
+        <th @click="sortTable('losses')">Înfrângeri {{ sortKey === 'losses' ? (sortOrder === 1 ? '↑' : '↓') : '' }}</th>
+        <th @click="sortTable('goalsScored')">Goluri marcate
+          {{ sortKey === 'goalsScored' ? (sortOrder === 1 ? '↑' : '↓') : '' }}
+        </th>
+        <th @click="sortTable('goalsConceded')">Goluri primite
+          {{ sortKey === 'goalsConceded' ? (sortOrder === 1 ? '↑' : '↓') : '' }}
+        </th>
+        <th @click="sortTable('goalDifference')">Golaveraj
+          {{ sortKey === 'goalDifference' ? (sortOrder === 1 ? '↑' : '↓') : '' }}
+        </th>
+        <th @click="sortTable('points')">Puncte {{ sortKey === 'points' ? (sortOrder === 1 ? '↑' : '↓') : '' }}</th>
       </tr>
       </thead>
       <tbody>
-      <tr>
-        <td>1</td>
-        <td>Real Madrid</td>
-        <td>22</td>
-        <td>15</td>
-        <td>4</td>
-        <td>3</td>
-        <td>50</td>
-        <td>21</td>
-        <td>+29</td>
-        <td>49</td>
-      </tr>
-      <tr>
-        <td>2</td>
-        <td>Atlético Madrid</td>
-        <td>22</td>
-        <td>14</td>
-        <td>6</td>
-        <td>2</td>
-        <td>37</td>
-        <td>14</td>
-        <td>+23</td>
-        <td>48</td>
-      </tr>
-      <tr>
-        <td>3</td>
-        <td>FC Barcelona</td>
-        <td>22</td>
-        <td>14</td>
-        <td>3</td>
-        <td>5</td>
-        <td>60</td>
-        <td>24</td>
-        <td>+36</td>
-        <td>45</td>
-      </tr>
-      <tr>
-        <td>4</td>
-        <td>Athletic Bilbao</td>
-        <td>22</td>
-        <td>11</td>
-        <td>8</td>
-        <td>3</td>
-        <td>33</td>
-        <td>20</td>
-        <td>+13</td>
-        <td>41</td>
-      </tr>
-      <tr>
-        <td>5</td>
-        <td>Villarreal</td>
-        <td>22</td>
-        <td>10</td>
-        <td>7</td>
-        <td>5</td>
-        <td>44</td>
-        <td>33</td>
-        <td>+11</td>
-        <td>37</td>
-      </tr>
-      <tr>
-        <td>6</td>
-        <td>Rayo Vallecano</td>
-        <td>22</td>
-        <td>8</td>
-        <td>8</td>
-        <td>6</td>
-        <td>26</td>
-        <td>24</td>
-        <td>+2</td>
-        <td>32</td>
-      </tr>
-      <tr>
-        <td>7</td>
-        <td>Girona</td>
-        <td>22</td>
-        <td>9</td>
-        <td>4</td>
-        <td>9</td>
-        <td>31</td>
-        <td>30</td>
-        <td>+1</td>
-        <td>31</td>
-      </tr>
-      <tr>
-        <td>8</td>
-        <td>Osasuna</td>
-        <td>22</td>
-        <td>7</td>
-        <td>9</td>
-        <td>6</td>
-        <td>27</td>
-        <td>31</td>
-        <td>-4</td>
-        <td>30</td>
-      </tr>
-      <tr>
-        <td>9</td>
-        <td>Mallorca</td>
-        <td>22</td>
-        <td>9</td>
-        <td>3</td>
-        <td>10</td>
-        <td>19</td>
-        <td>28</td>
-        <td>-9</td>
-        <td>30</td>
-      </tr>
-      <tr>
-        <td>10</td>
-        <td>Real Betis</td>
-        <td>22</td>
-        <td>7</td>
-        <td>8</td>
-        <td>7</td>
-        <td>25</td>
-        <td>28</td>
-        <td>-3</td>
-        <td>29</td>
-      </tr>
-      <tr>
-        <td>11</td>
-        <td>Real Sociedad</td>
-        <td>22</td>
-        <td>8</td>
-        <td>4</td>
-        <td>10</td>
-        <td>18</td>
-        <td>19</td>
-        <td>-1</td>
-        <td>28</td>
-      </tr>
-      <tr>
-        <td>12</td>
-        <td>Sevilla</td>
-        <td>22</td>
-        <td>7</td>
-        <td>7</td>
-        <td>8</td>
-        <td>24</td>
-        <td>30</td>
-        <td>-6</td>
-        <td>28</td>
-      </tr>
-      <tr>
-        <td>13</td>
-        <td>Celta Vigo</td>
-        <td>22</td>
-        <td>7</td>
-        <td>4</td>
-        <td>11</td>
-        <td>31</td>
-        <td>35</td>
-        <td>-4</td>
-        <td>25</td>
-      </tr>
-      <tr>
-        <td>14</td>
-        <td>Getafe</td>
-        <td>22</td>
-        <td>5</td>
-        <td>9</td>
-        <td>8</td>
-        <td>17</td>
-        <td>17</td>
-        <td>0</td>
-        <td>24</td>
-      </tr>
-      <tr>
-        <td>15</td>
-        <td>Las Palmas</td>
-        <td>22</td>
-        <td>6</td>
-        <td>5</td>
-        <td>11</td>
-        <td>27</td>
-        <td>30</td>
-        <td>-3</td>
-        <td>23</td>
-      </tr>
-      <tr>
-        <td>16</td>
-        <td>Leganés</td>
-        <td>22</td>
-        <td>5</td>
-        <td>8</td>
-        <td>9</td>
-        <td>19</td>
-        <td>30</td>
-        <td>-11</td>
-        <td>23</td>
-      </tr>
-      <tr>
-        <td>17</td>
-        <td>Deportivo Alavés</td>
-        <td>22</td>
-        <td>5</td>
-        <td>6</td>
-        <td>11</td>
-        <td>25</td>
-        <td>34</td>
-        <td>-9</td>
-        <td>21</td>
-      </tr>
-      <tr>
-        <td>18</td>
-        <td>Espanyol</td>
-        <td>22</td>
-        <td>6</td>
-        <td>5</td>
-        <td>11</td>
-        <td>21</td>
-        <td>33</td>
-        <td>-12</td>
-        <td>-3</td>
-      </tr>
-      <tr>
-        <td>19</td>
-        <td>Valencia</td>
-        <td>22</td>
-        <td>4</td>
-        <td>7</td>
-        <td>11</td>
-        <td>22</td>
-        <td>37</td>
-        <td>-15</td>
-        <td>19</td>
-      </tr>
-      <tr>
-        <td>20</td>
-        <td>Real Valladolid</td>
-        <td>22</td>
-        <td>4</td>
-        <td>3</td>
-        <td>15</td>
-        <td>15</td>
-        <td>47</td>
-        <td>-32</td>
-        <td>15</td>
+      <tr v-for="team in teams" :key="team.position">
+        <td>{{ team.position }}</td>
+        <td>{{ team.name }}</td>
+        <td>{{ team.matches }}</td>
+        <td>{{ team.wins }}</td>
+        <td>{{ team.draws }}</td>
+        <td>{{ team.losses }}</td>
+        <td>{{ team.goalsScored }}</td>
+        <td>{{ team.goalsConceded }}</td>
+        <td>{{ team.goalDifference }}</td>
+        <td>{{ team.points }}</td>
       </tr>
       </tbody>
     </table>
@@ -306,5 +364,104 @@ th {
   font-weight: bold;
   color: #000000;
   text-transform: uppercase;
+  cursor: pointer;
+}
+
+th:hover {
+  background-color: #f5f5f5;
+}
+
+@media (max-width: 768px) {
+  table {
+    width: 100%;
+  }
+
+  th, td {
+    padding: 8px; /* Reduce padding-ul */
+    font-size: 14px; /* Reduce dimensiunea fontului */
+  }
+
+  .liga-logo {
+    max-width: 120px; /* Logo mai mic pe mobil */
+  }
+}
+
+@media (max-width: 480px) {
+  table, thead, tbody, th, td, tr {
+    display: block; /* Transformă tabelul în blocuri */
+  }
+
+  thead tr {
+    position: absolute;
+    top: -9999px; /* Ascunde antetul, dar păstrează accesibilitatea */
+    left: -9999px;
+  }
+
+  tr {
+    margin-bottom: 15px; /* Spațiu între echipe */
+    border: 1px solid #ddd; /* Chenar pentru separare */
+  }
+
+  td {
+    border: none;
+    position: relative;
+    padding-left: 50%; /* Spațiu pentru etichetă */
+    text-align: left;
+  }
+
+  td:before {
+    content: attr(data-label); /* Adaugă eticheta coloanei */
+    position: absolute;
+    left: 10px;
+    width: 45%;
+    padding-right: 10px;
+    font-weight: bold;
+    white-space: nowrap;
+  }
+
+  /* Etichete pentru fiecare coloană */
+  td:nth-child(1):before {
+    content: "Loc";
+  }
+
+  td:nth-child(2):before {
+    content: "Echipa";
+  }
+
+  td:nth-child(3):before {
+    content: "Meciuri";
+  }
+
+  td:nth-child(4):before {
+    content: "Victorii";
+  }
+
+  td:nth-child(5):before {
+    content: "Egaluri";
+  }
+
+  td:nth-child(6):before {
+    content: "Înfrângeri";
+  }
+
+  td:nth-child(7):before {
+    content: "Goluri marcate";
+  }
+
+  td:nth-child(8):before {
+    content: "Goluri primite";
+  }
+
+  td:nth-child(9):before {
+    content: "Golaveraj";
+  }
+
+  td:nth-child(10):before {
+    content: "Puncte";
+  }
+
+  th {
+    cursor: default; /* Dezactivează cursorul pe mobil, sortarea e mai puțin practică */
+  }
 }
 </style>
