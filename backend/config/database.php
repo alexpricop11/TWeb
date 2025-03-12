@@ -1,22 +1,33 @@
 <?php
 
+require_once __DIR__ . '/../vendor/autoload.php';
+
+use Dotenv\Dotenv;
+
 class Database
 {
-    private $host = 'localhost';
-    private $dbname = 'tweb_db';
-    private $username = 'postgres';
-    private $password = '1234';
-    private $port = '5432';
     private $conn;
+
+    public function __construct()
+    {
+        $dotenv = Dotenv::createImmutable(__DIR__ . '/../');
+        $dotenv->load();
+    }
 
     public function connect()
     {
         $this->conn = null;
         try {
+            $host = $_ENV['DB_HOST'];
+            $dbname = $_ENV['DB_NAME'];
+            $username = $_ENV['DB_USER'];
+            $password = $_ENV['DB_PASS'];
+            $port = $_ENV['DB_PORT'];
+
             $this->conn = new PDO(
-                "pgsql:host=$this->host;port=$this->port;dbname=$this->dbname",
-                $this->username,
-                $this->password
+                "pgsql:host=$host;port=$port;dbname=$dbname",
+                $username,
+                $password
             );
             $this->conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         } catch (PDOException $e) {

@@ -2,12 +2,16 @@
   <div class="container">
     <div class="button-group">
       <button
-          :class="['button half left', isRegisterActive ? 'active' : 'inactive']"
-          @click="isRegisterActive = true">Înregistrare
+          class="button half left"
+          :class="{ active: isRegisterActive }"
+          @click="isRegisterActive = true">
+        Înregistrare
       </button>
       <button
-          :class="['button half right', !isRegisterActive ? 'active' : 'inactive']"
-          @click="isRegisterActive = false">Login
+          class="button half right"
+          :class="{ active: !isRegisterActive }"
+          @click="isRegisterActive = false">
+        Login
       </button>
     </div>
 
@@ -35,25 +39,19 @@ const isRegisterActive = ref(true);
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-
 .button-group {
   display: flex;
   margin-bottom: 20px;
 }
 
-
 .button {
+  flex: 1;
   padding: 12px;
   font-size: 16px;
   font-weight: bold;
   border: none;
   cursor: pointer;
-  transition: background-color 0.3s;
-}
-
-
-.half {
-  flex: 1;
+  transition: background-color 0.3s, color 0.3s;
 }
 
 .left {
@@ -66,4 +64,17 @@ const isRegisterActive = ref(true);
   border-bottom-right-radius: 6px;
 }
 
+.button.active {
+  background-color: #4CAF50;
+  color: #ffffff;
+}
+
+.button:not(.active) {
+  background-color: #2d3748;
+  color: #ffffff;
+}
+
+.button:not(.active):hover {
+  background-color: #4a5568;
+}
 </style>
