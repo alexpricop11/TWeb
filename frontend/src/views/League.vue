@@ -244,17 +244,13 @@ const teams = ref([
   }
 ])
 
-// Variabile reactive pentru sortare
-const sortKey = ref('') // Coloana după care se sortează
-const sortOrder = ref(1) // 1 pentru ascendent, -1 pentru descendent
+const sortKey = ref('')
+const sortOrder = ref(1)
 
-// Funcție de sortare
 const sortTable = (key) => {
   if (sortKey.value === key) {
-    // Inversează ordinea dacă e aceeași coloană
     sortOrder.value = -sortOrder.value
   } else {
-    // Sortează după o nouă coloană, implicit ascendent
     sortKey.value = key
     sortOrder.value = 1
   }
@@ -263,19 +259,16 @@ const sortTable = (key) => {
     let aValue = a[key]
     let bValue = b[key]
 
-    // Tratează cazurile speciale (goalDifference)
     if (key === 'goalDifference') {
-      aValue = parseInt(aValue) || 0 // Transformă în număr, 0 dacă e invalid
+      aValue = parseInt(aValue) || 0
       bValue = parseInt(bValue) || 0
       return sortOrder.value * (aValue - bValue)
     }
 
-    // Sortare pentru stringuri (ex. name)
     if (typeof aValue === 'string') {
       return sortOrder.value * aValue.localeCompare(bValue)
     }
 
-    // Sortare pentru numere (ex. matches, wins, points)
     return sortOrder.value * (aValue - bValue)
   })
 }

@@ -4,6 +4,7 @@ import Fixtures from '@/views/Fixtures.vue';
 import League from '@/views/League.vue';
 import Teams from '@/views/Teams.vue';
 import History from "@/views/History.vue";
+import AuthPage from "@/views/AuthPage.vue";
 
 const routes = [
     {path: '/', name: 'Home', component: HomePage},
@@ -11,6 +12,7 @@ const routes = [
     {path: '/league', name: 'League', component: League},
     {path: '/teams', name: 'Teams', component: Teams},
     {path: '/history', name: 'History', component: History},
+    {path: '/auth', name: 'Auth', component: AuthPage}
 ];
 
 const router = createRouter({

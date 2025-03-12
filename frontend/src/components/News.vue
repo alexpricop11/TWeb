@@ -35,7 +35,8 @@ const newsItems = ref([
     alt: 'Înfrângere în La Liga',
     title: '😢 Înfrângere în La Liga',
     text: 'Real Madrid a suferit a treia înfrângere din acest sezon în La Liga...',
-    link: 'https://www.dcnews.ro/real-madrid-sufera-al-treilea-esec-al-sezonului-in-campionatul-spaniei_985196.html?utm_source=chatgpt.com'
+    link: 'https://www.dcnews.ro/real-madrid-sufera-al-treilea-esec-al-sezo' +
+        'nului-in-campionatul-spaniei_985196.html?utm_source=chatgpt.com'
   }
 ])
 
