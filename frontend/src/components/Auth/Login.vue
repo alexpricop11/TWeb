@@ -16,11 +16,7 @@
       <div v-if="errors.password" class="error-message">{{ errors.password }}</div>
     </div>
 
-
-    <button type="submit"
-            class="submit-button">
-      Login
-    </button>
+    <button type="submit" class="submit-button">Login</button>
 
     <div v-if="generalError" class="error-message general">{{ generalError }}</div>
   </form>
@@ -28,8 +24,7 @@
 
 <script setup>
 import {ref} from 'vue';
-import axios from '@/axiosConfig';
-import router from "@/route.js";
+import $ from 'jquery';
 
 const showPassword = ref(false);
 const form = ref({
@@ -39,31 +34,40 @@ const form = ref({
 const errors = ref({});
 const generalError = ref('');
 
-const loginUser = async () => {
+const loginUser = () => {
   errors.value = {};
   generalError.value = '';
-  try {
-    const response = await axios.post('/login', form.value, {
-      headers: {
-        'Content-Type': 'application/json',
-      },
-    });
-    localStorage.setItem('token', response.data.token);
-    console.log(response);
-    await router.push('/');
-  } catch (error) {
-    if (error.response && error.response.data) {
-      if (error.response.data.detail) {
-        generalError.value = error.response.data.detail;
+
+
+  $.ajax({
+    url: 'http://localhost:8000/login',
+    type: 'POST',
+    contentType: 'application/json',
+    data: JSON.stringify(form.value),
+    success: (response) => {
+      localStorage.setItem('token', response.token);
+      console.log(response);
+      window.location.href = '/';
+    },
+    error: (xhr, status, error) => {
+
+      if (xhr.responseJSON) {
+
+        if (xhr.responseJSON.detail) {
+          generalError.value = xhr.responseJSON.detail;
+        } else {
+          errors.value = xhr.responseJSON;
+        }
       } else {
-        errors.value = error.response.data;
+
+        generalError.value = error || 'A apărut o eroare necunoscută.';
       }
-    } else if (error.message) {
-      generalError.value = error.message;
-    } else {
-      generalError.value = 'A apărut o eroare necunoscută.';
+
+      console.error('Error Status:', status);
+      console.error('Error Message:', error);
+      console.error('Response Text:', xhr.responseText);
     }
-  }
+  });
 };
 </script>
 
@@ -118,7 +122,6 @@ form {
   color: #ffffff;
 }
 
-
 .error-message {
   color: #e53e3e;
   font-size: 12px;
@@ -128,7 +131,6 @@ form {
 .error-message.general {
   margin-top: 10px;
 }
-
 
 .submit-button {
   width: 100%;

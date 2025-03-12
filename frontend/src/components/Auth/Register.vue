@@ -28,8 +28,7 @@
 
 <script setup>
 import {ref} from 'vue';
-import router from "@/route.js";
-import axios from "@/axiosConfig";
+import $ from 'jquery';
 
 const showPassword = ref(false);
 const form = ref({
@@ -46,23 +45,25 @@ const registerUser = async () => {
     return;
   }
 
-  try {
-    const response = await axios.post('/register', form.value, {
-      headers: {
-        'Content-Type': 'application/json',
-      },
-    });
-    console.log(response);
-    localStorage.setItem('token', response.data);
-    console.log(response.data);
-    await router.push('/');
-  } catch (error) {
-    if (error.response && error.response.data) {
-      errors.value = error.response.data.detail;
-    } else {
-      console.error('Registration error:', error);
+  $.ajax({
+    url: 'http://localhost:8000/register',
+    type: 'POST',
+    contentType: 'application/json',
+    data: JSON.stringify(form.value),
+    success: (response) => {
+      console.log(response);
+      localStorage.setItem('token', response);
+      console.log(response);
+      window.location.href = '/';
+    },
+    error: (error) => {
+      if (error.responseJSON && error.responseJSON.detail) {
+        errors.value = error.responseJSON.detail;
+      } else {
+        console.error('Registration error:', error);
+      }
     }
-  }
+  });
 };
 </script>
 
